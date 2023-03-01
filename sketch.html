@@ -1,6 +1,9 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Cheerio, the AI cheerleader</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
@@ -59,20 +62,6 @@
   </head>
 
   <body>
-    <!-- 
-todo
-https://tailwindcomponents.com/cheatsheet/
-* simulate exact iphone interface 
-* load the classifier model
-* do training with button
-* load sounds, play sounds
-* do a training sequence with sound
--->
-    <!-- 
-    <div class="container mx-auto" style="width: 234px; height: 506px; background-color: red">
-
--->
-
     <main>
       <div id="videoContainer" class="w-full video-container"></div>
       <div
@@ -85,7 +74,9 @@ https://tailwindcomponents.com/cheatsheet/
       </div>
 
       <div>
-        <button class="w-full" id="trainBtn">Train</button>
+        <p>
+          <button class="w-full" id="trainBtn"><i>Train</i></button>
+        </p>
       </div>
       <div>
         <button class="w-full" id="runBtn">Run</button>
@@ -93,6 +84,7 @@ https://tailwindcomponents.com/cheatsheet/
       <div>
         <button class="w-full" id="clearBtn">Clear</button>
       </div>
+      <a href="#"> Test </a>
       <p id="status">Loading Model...</p>
       <p>
         KNN Classifier with mobileNet model labeled this as Class:

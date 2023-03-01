@@ -11,28 +11,53 @@
       src="https://unpkg.com/ml5@latest/dist/ml5.min.js"
       type="text/javascript"
     ></script>
-
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css" />
     <style>
+      :root {
+        --active-brightness: 0.85;
+        --border-radius: 5px;
+        --box-shadow: 2px 2px 10px;
+        --color-accent: #118bee15;
+        --color-bg: #b9d8c2;
+        --color-bg-secondary: #e9e9e9;
+        --color-link: #0d0106;
+        --color-secondary: #920de9;
+        --color-secondary-accent: #920de90b;
+        --color-shadow: #f4f4f4;
+        --color-table: #118bee;
+        --color-text: #000;
+        --color-text-secondary: #999;
+        --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        --hover-brightness: 1.2;
+        --justify-important: center;
+        --justify-normal: left;
+        --line-height: 1.5;
+        --width-card: 285px;
+        --width-card-medium: 460px;
+        --width-card-wide: 800px;
+        --width-content: 1080px;
+      }
+
       video {
+        /* width: 100%; */
+        /* height: auto; */
+        /* max-height: 400px; */
+
+        border: 5px solid black;
+        border-radius: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+
+      .w-full {
         width: 100%;
-        height: auto;
       }
     </style>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: "#da373d",
-            },
-          },
-        },
-      };
-    </script>
   </head>
 
-  <body style="background-color: gray;">
+  <body>
     <!-- 
 todo
 https://tailwindcomponents.com/cheatsheet/
@@ -42,21 +67,30 @@ https://tailwindcomponents.com/cheatsheet/
 * load sounds, play sounds
 * do a training sequence with sound
 -->
-<!-- 
+    <!-- 
     <div class="container mx-auto" style="width: 234px; height: 506px; background-color: red">
 
 -->
-    <div class="container mx-auto" style="max-width: 1170px; height: 2532px;">
-      <div id="videoContainer" class="w-full"></div>
 
-      <div class="flex">
-        <button id="bgBtn">background</button>
-        <button id="onBtn">on</button>
-        <button id="offBtn">off</button>
+    <main>
+      <div id="videoContainer" class="w-full video-container"></div>
+      <div
+        class="flex"
+        style="display: flex; justify-content: center; gap: 10px"
+      >
+        <button id="bgBtn">BG</button>
+        <button id="onBtn">ON</button>
+        <button id="offBtn">OFF</button>
+      </div>
+
+      <div>
+        <button class="w-full" id="trainBtn">Train</button>
       </div>
       <div>
-        <button id="runBtn">Run</button>
-        <button id="clearBtn">Clear</button>
+        <button class="w-full" id="runBtn">Run</button>
+      </div>
+      <div>
+        <button class="w-full" id="clearBtn">Clear</button>
       </div>
       <p id="status">Loading Model...</p>
       <p>
@@ -64,7 +98,7 @@ https://tailwindcomponents.com/cheatsheet/
         <span id="result">...</span> with a confidence of
         <span id="confidence">...</span>
       </p>
-    </div>
+    </main>
     <script src="sketch.js"></script>
   </body>
 </html>

@@ -6,6 +6,8 @@ let cLabel = ""; // current label
 let pLabel = "";
 let sound;
 
+let speech;
+
 let sounds = [];
 let soundFiles = ["good-job-josh.mp3"];
 
@@ -26,8 +28,15 @@ function preload() {
   }
 }
 
+function voiceReady() {
+  console.log(speech.voices);
+  speech.setVoice('Daniel');
+
+}
+
 function setup() {
   sound = loadSound('assets/good-job-josh.mp3');
+  speech = new p5.Speech(voiceReady); //callback, speech synthesis object
 
   featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
   noCanvas();
@@ -39,7 +48,10 @@ function setup() {
   let offBtn = document.querySelector('#offBtn');
   let runBtn = document.querySelector('#runBtn');
   let clearBtn = document.querySelector('#clearBtn');
-  
+  let startBtn = document.querySelector('#startBtn');
+
+  startBtn.addEventListener('click', startExperience);
+
   bgBtn.addEventListener('click', () => {
     addExample('bg');
   });
@@ -117,9 +129,107 @@ function gotResults(err, result) {
   classify();
 }
 
+async function say(something) {
+  console.log(something);
+  speech.speak(something); 
+  await new Promise(resolve => speech.ended(resolve));
+  //await wait(1000);
+}
+
 async function startExperience() {
-  console.log("sound started playing");
-  sound.play();
+
+  await say("Hello, I'm Cheerio, your AI cheerleader!");
+  await wait(100);
+
+  await say("Let's get started!");
+  await wait(100);
+
+  await say("Show me something in 3 seconds");
+  await wait(100);
+
+  await say("3");
+  await wait(100);
+
+  await say("2");
+  await wait(100);
+
+  await say("1");
+  await wait(100);
+
+  await say("Show me something");
+
+  for (var i = 0; i < 20; i++) {
+    await wait(100);
+    addExample('on');
+    
+    if (Math.random() < 0.1) {
+      await say("Keep going!");
+    }
+  }
+
+  await say("Great, great! Now don't show me anything");
+  await wait(100);
+
+  await say("3");
+  await wait(100);
+
+  await say("2");
+  await wait(100);
+
+  await say("1");
+  await wait(100);
+
+  await say("Show me nothing! Go!");
+
+  for (var i = 0; i < 20; i++) {
+    await wait(100);
+    addExample('off');
+    
+    if (Math.random() < 0.1) {
+      await say("Keep going!");
+    }
+  }
+
+  await say("BOOM");
+
+  await say("We are good to go, chief!");
+
+  await say("We are starting in 3!!!");
+  await wait(100);
+
+  await say("3");
+  await wait(100);
+
+  await say("2");
+  await wait(100);
+
+  await say("1");
+  await wait(100);
+
+  await say("BOOM");
+
+
+  classify();
+
+
+
+  // start the experience
+
+
+  // Train bg class
+  // Countdown
+
+  // Train something class
+
+  // Train nothing class
+
+  // Run
+  // Be ready for cancel
+
+  //console.log("sound started playing");
+  //sound.play();
+
+  // Welcome message
 
   await new Promise(resolve => sound.onended(resolve));
   console.log("sound finished playing");
@@ -135,3 +245,14 @@ function clearAllLabels() {
   knnClassifier.clearAllLabels();
   updateCounts();
 }
+<<<<<<< HEAD
+
+function wait(milliseconds) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, milliseconds);
+  });
+}
+=======
+>>>>>>> 02b797ceaaefbbff71c592be12d587b33bedf92b

@@ -8,6 +8,9 @@ let sound;
 let reactEmoji;
 let speech;
 
+let startBtn;
+let stopClassify = false;
+
 let sounds = [];
 let soundFiles = ["good-job-josh.mp3"];
 
@@ -75,9 +78,9 @@ function setup() {
   let offBtn = document.querySelector("#offBtn");
   let runBtn = document.querySelector("#runBtn");
   let clearBtn = document.querySelector("#clearBtn");
-  let startBtn = document.querySelector("#startBtn");
+  startBtn = document.querySelector("#startBtn");
 
-  startBtn.addEventListener("click", startExperience);
+  startBtn.addEventListener("click", startBtnPushed);
 
   bgBtn.addEventListener("click", () => {
     addExample("bg");
@@ -140,6 +143,11 @@ function gotResults(err, result) {
     }
   }
 
+  if (stopClassify) {
+    stopClassify = false;
+    return;
+  }
+
   classify();
 }
 
@@ -160,7 +168,30 @@ async function say(something) {
   }
 }
 
+
+function startBtnPushed() {
+  if (startBtn.textContent == "START") {
+    startExperience();
+  } else if (startBtn.textContent == "DONE") {
+    done();
+  } else if (startBtn.textContent == "AGAIN") {
+    startExperience();
+  }
+}
+
+function done() {
+  // Do celebration stuff
+  stopClassify = true;
+  
+  // reset other vars
+  say("Amazing job, you're the best!");
+  startBtn.textContent = "AGAIN";
+
+  knnClassifier.clearAllLabels();
+}
+
 async function startExperience() {
+  startBtn.textContent = "DONE";
   // reactEmoji.classList.add("animate__animated");
   // reactEmoji.classList.add("animate__bounce");
 

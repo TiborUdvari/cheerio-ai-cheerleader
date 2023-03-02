@@ -129,7 +129,7 @@ blockquote > footer {
     font-family: 'Rampart One', cursive;
     font-size: 16rem;
     z-index: 1000;
-    display: block;
+    display: none;
     color: var(--color-secondary);
     mix-blend-mode: exclusion;
     padding-bottom: 1rem;

@@ -120,16 +120,19 @@ blockquote > footer {
 }
 .counter-container {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #counter-value {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
     font-family: 'Rampart One', cursive;
     font-size: 16rem;
     z-index: 1000;
-    display: none;
+    /* display: none; */
     color: var(--color-secondary);
     mix-blend-mode: exclusion;
     padding-bottom: 1rem;

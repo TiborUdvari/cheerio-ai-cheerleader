@@ -161,6 +161,8 @@ function rep(){
   countEl.textContent = counter;
   sound.play();
   // do fun stuff
+
+  // fun anims
 }
 
 function setProgress(progress) {

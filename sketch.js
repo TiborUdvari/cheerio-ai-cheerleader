@@ -7,6 +7,11 @@ let pLabel = "";
 let sound;
 let reactEmoji;
 let speech;
+
+let startBtn;
+let progressP;
+let stopClassify = false;
+
 let sounds = [];
 let soundFiles = ["good-job-josh.mp3"];
 
@@ -74,10 +79,11 @@ function setup() {
   let offBtn = document.querySelector("#offBtn");
   let runBtn = document.querySelector("#runBtn");
   let clearBtn = document.querySelector("#clearBtn");
-  let startBtn = document.querySelector("#startBtn");
+  startBtn = document.querySelector("#startBtn");
   let countRep = document.getElementById('counter-value');
-  
-  startBtn.addEventListener("click", startExperience);
+    progressP = document.querySelector("#progress");
+
+  startBtn.addEventListener("click", startBtnPushed);
 
   bgBtn.addEventListener("click", () => {
     addExample("bg");
@@ -140,7 +146,26 @@ function gotResults(err, result) {
     }
   }
 
+  if (stopClassify) {
+    stopClassify = false;
+    return;
+  }
+
   classify();
+}
+
+function setProgress(progress) {
+  let on = "█";
+  let off = "▒";
+  let max = 5;
+
+  let str = "";
+  for (let i = 0; i < max; i++) {
+    let extra = i / max < progress ? on : off;
+    str += extra;
+  }
+
+  progressP.textContent = str;
 }
 
 async function say(something) {
@@ -160,7 +185,31 @@ async function say(something) {
   }
 }
 
+
+function startBtnPushed() {
+  if (startBtn.textContent == "START") {
+    startExperience();
+  } else if (startBtn.textContent == "DONE") {
+    done();
+  } else if (startBtn.textContent == "AGAIN") {
+    startExperience();
+  }
+}
+
+function done() {
+  // Do celebration stuff
+  stopClassify = true;
+  
+  // reset other vars
+  say("Amazing job, you're the best!");
+  startBtn.textContent = "AGAIN";
+
+  knnClassifier.clearAllLabels();
+}
+
 async function startExperience() {
+  startBtn.textContent = "DONE";
+  startBtn.style.visibility = "hidden";
   // reactEmoji.classList.add("animate__animated");
   // reactEmoji.classList.add("animate__bounce");
 
@@ -194,14 +243,21 @@ async function startExperience() {
 
   await say("Show me something");
 
+  progressP.style.display = "block";
+  reactEmoji.src = "./assets/pump.png";
+
   for (var i = 0; i < 20; i++) {
     await wait(100);
     addExample("on");
-
+    setProgress(i / 20);
     if (Math.random() < 0.1) {
       await say("Keep going!");
     }
   }
+
+  progressP.style.display = "none";
+  reactEmoji.src = "";
+
 
   await say("Great, great! Now don't show me anything");
   await wait(100);
@@ -222,6 +278,9 @@ async function startExperience() {
 
   await say("Show me nothing! Go!");
 
+  progressP.style.display = "block";
+  reactEmoji.src = "./assets/pump.png";
+
   for (var i = 0; i < 20; i++) {
     await wait(100);
     addExample("off");
@@ -229,7 +288,11 @@ async function startExperience() {
     if (Math.random() < 0.1) {
       await say("Keep going!");
     }
+    setProgress(i / 20);
   }
+
+  progressP.style.display = "none";
+  reactEmoji.src = "";
 
   reactEmoji.src = await new Promise((resolve) => resolve("./assets/100.png"));
 
@@ -258,6 +321,10 @@ async function startExperience() {
   await say("BOOM");
 
   classify();
+
+  await wait(5 * 1000); // 5 secs, change here for video
+  startBtn.style.visibility = "visible";
+
 
   // start the experience
 

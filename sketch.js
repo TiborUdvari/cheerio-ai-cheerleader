@@ -138,8 +138,8 @@ async function say(something) {
 }
 
 async function startExperience() {
-
   await say("Hello, I'm Cheerio, your AI cheerleader!");
+  document.getElementById('react-emoji').src = "./assets/explosion.png"
   await wait(100);
 
   await say("Let's get started!");

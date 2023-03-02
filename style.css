@@ -124,7 +124,9 @@ blockquote > footer {
         }
         video{
             height: 100%;
-            max-width: none;
+            max-width: 100%;
+            object-fit: cover;
+            padding-left: -20%;
             top: 0;
             left: 0;
             transform: translate(0,0);            

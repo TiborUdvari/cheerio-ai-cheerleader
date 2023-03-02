@@ -192,6 +192,7 @@ function done() {
 
 async function startExperience() {
   startBtn.textContent = "DONE";
+  startBtn.style.visibility = "hidden";
   // reactEmoji.classList.add("animate__animated");
   // reactEmoji.classList.add("animate__bounce");
 
@@ -289,6 +290,10 @@ async function startExperience() {
   await say("BOOM");
 
   classify();
+
+  await wait(5 * 1000); // 5 secs, change here for video
+  startBtn.style.visibility = "visible";
+
 
   // start the experience
 

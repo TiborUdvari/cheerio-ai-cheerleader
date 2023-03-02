@@ -6,6 +6,15 @@ let cLabel = ""; // current label
 let pLabel = "";
 let sound;
 
+let sounds = [];
+let soundFiles = ["good-job-josh.mp3"];
+
+function preload() {
+  for (let i = 0; i < soundFiles.length; i++) {
+    sounds[i] = loadSound('assets/' + soundFiles[i]);
+  }
+}
+
 function setup() {
   sound = loadSound('assets/good-job-josh.mp3');
 
@@ -95,6 +104,15 @@ function gotResults(err, result) {
     off: 0.3333333333333333
   */
   classify();
+}
+
+async function startExperience() {
+  console.log("sound started playing");
+  sound.play();
+
+  await new Promise(resolve => sound.onended(resolve));
+  console.log("sound finished playing");
+
 }
 
 function updateCounts() {

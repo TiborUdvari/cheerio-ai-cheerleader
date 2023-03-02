@@ -16,6 +16,10 @@
     ></script>
     <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css" />
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       :root {
         --active-brightness: 0.85;
         --border-radius: 5px;
@@ -44,9 +48,9 @@
 
       video {
         /* width: 100%; */
-        /* height: auto; */
+        height: auto;
         /* max-height: 400px; */
-
+        
         border: 5px solid black;
         border-radius: 5px;
         margin-left: auto;
@@ -64,7 +68,17 @@
   <body>
     <main>
       <div id="videoContainer" class="w-full video-container"></div>
-      <div
+      <div class="flex" style="justify-content: center;">
+        <button id="startBtn" class="w-full">START</button>
+      </div>
+      
+
+      
+
+
+      <section style="display: none;">
+
+        <div
         class="flex"
         style="display: flex; justify-content: center; gap: 10px"
       >
@@ -72,25 +86,26 @@
         <button id="onBtn">ON</button>
         <button id="offBtn">OFF</button>
       </div>
-
-      <div>
+        <div>
+          <p>
+            <button class="w-full" id="trainBtn"><i>Train</i></button>
+          </p>
+        </div>
+        <div>
+          <button class="w-full" id="runBtn">Run</button>
+        </div>
+        <div>
+          <button class="w-full" id="clearBtn">Clear</button>
+        </div>
+        <a href="#"> Test </a>
+        <p id="status">Loading Model...</p>
         <p>
-          <button class="w-full" id="trainBtn"><i>Train</i></button>
+          KNN Classifier with mobileNet model labeled this as Class:
+          <span id="result">...</span> with a confidence of
+          <span id="confidence">...</span>
         </p>
-      </div>
-      <div>
-        <button class="w-full" id="runBtn">Run</button>
-      </div>
-      <div>
-        <button class="w-full" id="clearBtn">Clear</button>
-      </div>
-      <a href="#"> Test </a>
-      <p id="status">Loading Model...</p>
-      <p>
-        KNN Classifier with mobileNet model labeled this as Class:
-        <span id="result">...</span> with a confidence of
-        <span id="confidence">...</span>
-      </p>
+      </section>
+      
     </main>
     <script src="sketch.js"></script>
   </body>

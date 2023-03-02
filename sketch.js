@@ -11,6 +11,17 @@ let speech;
 let sounds = [];
 let soundFiles = ["good-job-josh.mp3"];
 
+// CONFETTI: Pass in the id of an element
+let confetti = new Confetti('startBtn');
+
+// Edit given parameters
+confetti.setCount(150);
+confetti.setSize(30);
+confetti.setPower(100);
+confetti.setFade(true);
+confetti.destroyTarget(false);
+
+
 function preload() {
   for (let i = 0; i < soundFiles.length; i++) {
     sounds[i] = loadSound('assets/' + soundFiles[i]);
@@ -234,6 +245,7 @@ function clearAllLabels() {
   knnClassifier.clearAllLabels();
   updateCounts();
 }
+<<<<<<< HEAD
 
 function wait(milliseconds) {
   return new Promise(resolve => {
@@ -242,3 +254,5 @@ function wait(milliseconds) {
     }, milliseconds);
   });
 }
+=======
+>>>>>>> 02b797ceaaefbbff71c592be12d587b33bedf92b

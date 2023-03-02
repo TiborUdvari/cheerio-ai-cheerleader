@@ -144,8 +144,8 @@ async function startExperience() {
   // reactEmoji.classList.add("animate__animated");
   // reactEmoji.classList.add("animate__bounce");
 
-  reactEmoji.src = "./assets/explosion.png" 
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/explosion.png"))
+  
   await say("Hello, I'm Cheerio, your AI cheerleader!");
   await wait(100);
 
@@ -155,18 +155,18 @@ async function startExperience() {
   await say("Show me something in 3 seconds");
   await wait(100);
 
-  reactEmoji.src = "./assets/3.png"
-  await new Promise(resolve => reactEmoji.onload(resolve)); 
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/3.png")); 
+  
   await say("3");
   await wait(100);
 
-  reactEmoji.src = "./assets/2.png" 
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/2.png" ));
+  
   await say("2");
   await wait(100);
 
-  reactEmoji.src = "./assets/1.png" 
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/1.png" ));
+  
   await say("1");
   await wait(100);
 
@@ -185,18 +185,17 @@ async function startExperience() {
   await say("Great, great! Now don't show me anything");
   await wait(100);
 
-  reactEmoji.src = "./assets/3.png";
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/3.png"));
   await say("3");
   await wait(100);
 
-  reactEmoji.src = "./assets/2.png" 
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/2.png" ));
+  
   await say("2");
   await wait(100);
 
-  reactEmoji.src = "./assets/1.png" 
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/1.png" ));
+  
   await say("1");
   await wait(100);
 
@@ -211,8 +210,8 @@ async function startExperience() {
     }
   }
 
-  reactEmoji.src = "./assets/100.png" 
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/100.png" ));
+  
   await say("BOOM");
 
   await say("We are good to go, chief!");
@@ -220,23 +219,21 @@ async function startExperience() {
   await say("We are starting in 3!!!");
   await wait(100);
 
-  reactEmoji.src = "./assets/3.png"
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/3.png"));
+  
   await say("3");
   await wait(100);
 
-  reactEmoji.src = "./assets/2.png" 
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/2.png" ));
+  
   await say("2");
   await wait(100);
 
-  reactEmoji.src = "./assets/1.png" 
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/1.png" ));
   await say("1");
   await wait(100);
 
-  reactEmoji.src = "./assets/100.png" 
-  await new Promise(resolve => reactEmoji.onload(resolve));
+  reactEmoji.src = await new Promise(resolve => resolve("./assets/100.png" ));
   await say("BOOM");
 
 

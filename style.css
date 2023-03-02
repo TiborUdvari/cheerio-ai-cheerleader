@@ -95,6 +95,10 @@
     line-height: 2rem;
     max-width: 50%;   
   }
+  button > a {
+    color: var(--color-bg);
+    text-decoration: none;
+  }
   #startBtn{
     position: absolute;
     z-index: 1;
@@ -131,7 +135,7 @@ blockquote > footer {
             left: 0;
             transform: translate(0,0);            
             /* width: auto; */
-            
+            border-radius: 0;
             top: 0;
             left: 0;
         }

@@ -10,9 +10,11 @@
     />
     <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://confettijs.org/confetti.min.js"></script>
 </head>
 <body>
-    <header>
+    <header id="page-header">
         <h1>Hi, I'm Cheerio!</h1>
         <p>Your new AI workout cheerleader!</p>
         <img src="./assets/eyes.png" alt="" class="emoji">
@@ -25,22 +27,22 @@
             <header>
                 <hr>
                 <h2>Workout with Cheerio!</h2>
-                <p>it protec, it attak, but most importantly, it sets you on a nice track</p>
+                <p>I protec, I attak, but most importantly, I set you on a nice track</p>
             </header>
             <aside>
                 <img src="./assets/leg.png" alt="" class="emoji">
                 <h3>Squats</h3>
-                <p>Don't skip leg day anymore</p>
+                <p>Don't skip leg day</p>
             </aside>
             <aside>
                 <img src="./assets/pump.png" alt="" class="emoji">
                 <h3>Pushups</h3>
-                <p>Keep it up</p>
+                <p>Keep it pumped</p>
             </aside>
             <aside>
                 <img src="./assets/lifting.png" alt="" class="emoji">
                 <h3>Weights</h3>
-                <p>Bro u even lift?</p>
+                <p>Do u even lift?</p>
             </aside>
 
         </section>
@@ -48,7 +50,7 @@
             <header>
                 <hr>
                 <h2>how it works</h2>
-                <p>it protec, it attak, but most importantly, it sets you on a nice track</p>
+                <p>Super simple: three steps</p>
             </header>
             <aside>
                 <img src="./assets/cam.png" alt="" class="emoji">
@@ -67,11 +69,11 @@
             </aside>
 
         </section>
-        <section>
+        <section id="also">
             <header>
                 <hr>
                 <h2>Also works with</h2>
-                <p>it protec, it attak, but most importantly, it sets you on a nice track</p>
+
             </header>
             
             <aside>
@@ -84,28 +86,60 @@
             </aside>
 
         </section>
-        <section>
+        <section id="quote">
             <hr>
             <blockquote>
-                Less UI more AI
+                "Less UI more AI"
                 <footer>Tibor Udvari, co-founder of Cheerio</footer>
             </blockquote>
             <blockquote>
-                It really works
+                "It really works"
                 <footer>Amaury Hamon, co-founder of Cheerio</footer>
             </blockquote>
             
         </section>
+        <section id="clients">
+            <header>
+                <hr>
+                <h2>Our happy clients</h2>
+            </header>
+            <aside>
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 190 106"><path fill="#fff" d="M84.88 10.604C84.88 4.678 89.878 0 95.81 0c5.932 0 10.929 4.366 10.929 10.604 0 6.393-4.997 10.603-10.93 10.603-5.932 0-10.928-4.366-10.928-10.603Zm19.985 94.809h-18.11V32.747h18.11v72.666Zm36.735.001v-6.082h-12.178v-6.081h-6.089V81.244H117.4v-24.17h5.933V44.91h6.089v-6.082H141.6v-6.081h24.2v6.081h12.178v6.082h5.933v12.163H190v24.17h-6.089V93.25h-5.933v6.081H165.8v6.082h-24.2Zm-5.621-36.333c0 9.668 8.431 18.244 18.112 18.244 9.992 0 18.266-8.264 18.266-18.244 0-10.292-7.962-18.089-18.266-18.089-9.993 0-18.112 8.109-18.112 18.089ZM24.2 105.414v-6.082H12.022v-6.081h-6.09V81.244H0v-24.17h5.933V44.91h6.089v-6.082H24.2v-6.081h24.2v6.081h12.178v6.082h5.933v12.163h6.09v24.17h-6.09V93.25h-5.933v6.081H48.4v6.082H24.2Zm-5.62-36.333c0 9.668 8.43 18.244 18.11 18.244 9.993 0 18.268-8.264 18.268-18.244 0-10.292-7.963-18.089-18.267-18.089-9.993 0-18.112 8.109-18.112 18.089ZM72.735 1.505H0v15.734h72.735V1.505Zm70.189.001h-17.219v15.735h17.219V1.506Zm38.873 0h-17.219v15.735h17.219V1.506Z"></path></svg>
+            </aside>
+            <aside>
+                <img src="./assets/head.png" style="mix-blend-mode: darken;" alt="">
+            </aside>
+        </section>
         <section>
-            <hr>
-            <button>Live Demo</button>
+
+            <header>
+                <hr>
+                <h2>Try now</h2>
+            </header>
+            <button id="demo">Live Demo</button>
         </section>
         
         <!-- <p>Here is a link to the <a href="./sketch.html">working project</a>.</p> -->
     </main>
     <footer>
         <hr>
-        <p>Made by <a target="_blank" href="www.amauryhamon.com">Amaury Hamon</a> & <a target="_blank" href="www.tiborudvari.com">Tibor Udvari</a> during a workshop of Master Media Design at <a target="_blank" href="https://www.hesge.ch/head/">HEAD</a> with <a target="_blank" href="https://oio.studio/">Matteo Loglio (Oio Studio)</a> </p>
+        <p>Made by <a target="_blank" href="https://amauryhamon.com">Amaury Hamon</a> & <a target="_blank" href="https://tiborudvari.com">Tibor Udvari</a> during a workshop of Master Media Design at <a target="_blank" href="https://www.hesge.ch/head/">HEAD</a> with <a target="_blank" href="https://oio.studio/">Matteo Loglio (Oio Studio)</a> </p>
+
     </footer>
+    <script>
+        let confetti;
+
+            // CONFETTI: Pass in the id of an element
+        confetti = new Confetti("page-header");
+
+        // Edit given parameters
+        confetti.setCount(50);
+        confetti.setSize(30);
+        confetti.setPower(100);
+        confetti.setFade(true);
+        confetti.destroyTarget(false);
+        
+        
+    </script>
 </body>
 </html>

@@ -14,7 +14,6 @@ let stopClassify = false;
 let countEl;
 let counter = 0;
 
-
 let sounds = [];
 let soundFiles = ["good-job-josh.mp3"];
 
@@ -35,15 +34,7 @@ let audioMap = {
 
 let imgs = ["1.png", "2.png", "3.png", "100.png", "cam.png", "cool.png", "douglas.png", "explosion.png", "eyes.png", "fist.png", "hi5.png", "ok.png", "pump.png", "star.png", "star2.png", "star3.png", "stopwatch.png", "standing.png"];
 let emojiImgs = [];
-// CONFETTI: Pass in the id of an element
-let confetti = new Confetti("startBtn");
 
-// Edit given parameters
-confetti.setCount(150);
-confetti.setSize(30);
-confetti.setPower(100);
-confetti.setFade(true);
-confetti.destroyTarget(false);
 
 function preload() {
   document.querySelector("main").style.display = "none";
@@ -161,7 +152,7 @@ function rep(){
   countEl.textContent = counter;
   sound.play();
   // do fun stuff
-
+  confetti();
   // fun anims
 }
 
@@ -227,6 +218,7 @@ async function startExperience() {
   reactEmoji.src = await new Promise((resolve) =>
     resolve("./assets/explosion.png")
   );
+  animateCSS(reactEmoji, "bounce");
 
   await say("Hello, I'm Cheerio, your AI cheerleader!");
   await wait(100);
@@ -375,3 +367,21 @@ function wait(milliseconds) {
     }, milliseconds);
   });
 }
+
+const animateCSS = (element, animation, prefix = 'animate__') =>
+  // We create a Promise and return it
+  new Promise((resolve, reject) => {
+    const animationName = `${prefix}${animation}`;
+    const node = element;
+
+    node.classList.add(`${prefix}animated`, animationName);
+
+    // When the animation ends, we clean the classes and resolve the Promise
+    function handleAnimationEnd(event) {
+      event.stopPropagation();
+      node.classList.remove(`${prefix}animated`, animationName);
+      resolve('Animation ended');
+    }
+
+    node.addEventListener('animationend', handleAnimationEnd, {once: true});
+  });

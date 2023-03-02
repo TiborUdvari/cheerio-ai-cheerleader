@@ -11,6 +11,20 @@ let speech;
 let sounds = [];
 let soundFiles = ["good-job-josh.mp3"];
 
+let audioMap = {
+  "Hello, I'm Cheerio, your AI cheerleader!": "hello-im-cheerio-your-ai-cheerleader.mp3",
+  "Let's get started!": "lets-get-started.mp3",
+  "Show me something in 3 seconds": "show-me-something-in-3-seconds.mp3",
+  "1": "1.mp3",
+  "2": "2.mp3",
+  "3": "3.mp3",
+  "Great, great! Now don't show me anything": "great-great-now-dont-show-me-anything.mp3",
+  "Show me nothing! Go!": "show-me-nothing-go.mp3",
+  "Keep going!": "keep-going.mp3",
+  "BOOM": "boom.mp3",
+  "We're starting in 3!!!": "were-starting-in-3.mp3",
+};
+
 // CONFETTI: Pass in the id of an element
 let confetti = new Confetti('startBtn');
 
@@ -135,8 +149,20 @@ function gotResults(err, result) {
 
 async function say(something) {
   console.log(something);
-  speech.speak(something); 
-  await new Promise(resolve => speech.ended(resolve));
+  // load and play a sound file if exits
+  if (audioMap[something]) {
+    let audio = new Audio('./assets/' + audioMap[something]);
+    audio.play();
+    // await audio.play();
+    await new Promise(resolve => audio.ended(resolve));
+
+  } else {
+    speech.speak(something); 
+    console.error("No audio file for " + something);
+    await new Promise(resolve => speech.ended(resolve));
+  }
+
+  //await new Promise(resolve => speech.ended(resolve));
   //await wait(1000);
 }
 

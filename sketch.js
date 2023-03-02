@@ -39,6 +39,8 @@ confetti.setFade(true);
 confetti.destroyTarget(false);
 
 function preload() {
+  document.querySelector("main").style.display = "none";
+
   audioMap = Object.assign(
     {},
     ...Object.keys(audioMap).map((key) => ({
@@ -56,6 +58,8 @@ function voiceReady() {
 }
 
 function setup() {
+  document.querySelector("main").style.display = "inherit";
+
   reactEmoji = document.getElementById("react-emoji");
 
   sound = loadSound("assets/good-job-josh.mp3");

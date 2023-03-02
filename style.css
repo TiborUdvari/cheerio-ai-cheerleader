@@ -1,8 +1,6 @@
-
-
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
   :root {
     --active-brightness: 0.85;
@@ -105,14 +103,14 @@
     
 }
 blockquote {
-    display: inline-block;
-    width: 50%;
-    font-size: 4rem;
-    line-height: 1;
-    font-family: 'Rampart One', cursive;
+  display: inline-block;
+  width: 50%;
+  font-size: 4rem;
+  line-height: 1;
+  font-family: "Rampart One", cursive;
 }
 blockquote > footer {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
   /* RESPONSIVE LAYOUT*/
@@ -140,3 +138,12 @@ blockquote > footer {
 
     }
 
+#p5_loading {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: var(--color-bg); */
+  /* border-radius: var(--border-radius); */
+}

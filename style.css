@@ -37,7 +37,10 @@
     font-family: 'Rampart One', cursive;
   }
   h1 {
-    font-size: 4rem;
+    font-size: 6rem;
+  }
+  h2{
+    font-size: 3rem;
   }
   aside>h3 {
     margin-top: 0;
@@ -60,10 +63,15 @@
     margin-right: auto;
     display: block;
     max-width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
 
   .w-full {
-    width: 100%;
+    /* width: 100%; */
   }
   .flex{
     display: flex;
@@ -117,12 +125,13 @@ blockquote > footer {
             padding: 0;
         }
         video{
-            height: 120%;
+            height: 100%;
             max-width: none;
-
+            top: 0;
+            left: 0;
+            transform: translate(0,0);            
             /* width: auto; */
-            position: absolute;
-            z-index: -1;
+            
             top: 0;
             left: 0;
         }

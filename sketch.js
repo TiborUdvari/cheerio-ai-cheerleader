@@ -11,6 +11,9 @@ let speech;
 let startBtn;
 let progressP;
 let stopClassify = false;
+let countEl;
+let counter = 0;
+
 
 let sounds = [];
 let soundFiles = ["good-job-josh.mp3"];
@@ -80,8 +83,8 @@ function setup() {
   let runBtn = document.querySelector("#runBtn");
   let clearBtn = document.querySelector("#clearBtn");
   startBtn = document.querySelector("#startBtn");
-  let countRep = document.getElementById('counter-value');
-    progressP = document.querySelector("#progress");
+  countEl = document.getElementById('counter-value');
+  progressP = document.querySelector("#progress");
 
   startBtn.addEventListener("click", startBtnPushed);
 
@@ -137,8 +140,7 @@ function gotResults(err, result) {
         cLabel = result.label;
 
         if (cLabel == "on" && pLabel == "off") {
-          //console.log("trigger");
-          sound.play();
+          rep();
         }
 
         pLabel = cLabel;
@@ -152,6 +154,13 @@ function gotResults(err, result) {
   }
 
   classify();
+}
+
+function rep(){
+  counter++;
+  countEl.textContent = counter;
+  sound.play();
+  // do fun stuff
 }
 
 function setProgress(progress) {

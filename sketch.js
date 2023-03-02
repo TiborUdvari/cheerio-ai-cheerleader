@@ -12,18 +12,17 @@ let sounds = [];
 let soundFiles = ["good-job-josh.mp3"];
 
 let audioMap = {
-  "Hello, I'm Cheerio, your AI cheerleader!":
-    "hello-im-cheerio-your-ai-cheerleader.mp3",
+  "Hello, I'm Cheerio, your AI cheerleader!": "hello-im-cheerio-your-ai-cheerleader.mp3",
   "Let's get started!": "lets-get-started.mp3",
+  "Show me something": "show-me-something.mp3",
   "Show me something in 3 seconds": "show-me-something-in-3-seconds.mp3",
-  1: "1.mp3",
-  2: "2.mp3",
-  3: "3.mp3",
-  "Great, great! Now don't show me anything":
-    "great-great-now-dont-show-me-anything.mp3",
+  "1": "1.mp3",
+  "2": "2.mp3",
+  "3": "3.mp3",
+  "Great, great! Now don't show me anything": "great-great-now-dont-show-me-anything.mp3",
   "Show me nothing! Go!": "show-me-nothing-go.mp3",
   "Keep going!": "keep-going.mp3",
-  BOOM: "boom.mp3",
+  "BOOM": "boom.mp3",
   "We're starting in 3!!!": "were-starting-in-3.mp3",
 };
 
@@ -44,12 +43,6 @@ function preload() {
       [key]: loadSound("assets/audio/" + audioMap[key]),
     }))
   );
-  console.log(audioMap);
-
-  // Object.keys(audioMap).map(v => ({
-  //   fn: v,
-  //   sound: loadSound('assets/audio/' + v)
-  // }));
 }
 
 function voiceReady() {
@@ -234,9 +227,9 @@ async function startExperience() {
 
   await say("BOOM");
 
-  await say("We are good to go, chief!");
+  await say("We are good to go, buddy!");
 
-  await say("We are starting in 3!!!");
+  await say("We're starting in 3!!!");
   await wait(100);
 
   reactEmoji.src = await new Promise((resolve) => resolve("./assets/3.png"));

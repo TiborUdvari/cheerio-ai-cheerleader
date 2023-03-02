@@ -31,6 +31,7 @@ function preload() {
 function voiceReady() {
   console.log(speech.voices);
   speech.setVoice('Daniel');
+  speech.setLang('en-US');
 
 }
 

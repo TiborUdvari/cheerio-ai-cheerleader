@@ -30,7 +30,7 @@ let audioMap = {
   "We're starting in 3!!!": "were-starting-in-3.mp3",
 };
 
-let imgs = ["1.png", "2.png", "3.png", "100.png", "cam.png", "cool.png", "douglas.png", "explosion.png", "eyes.png", "fist.png", "hi5.png", "ok.png", "pump.png", "star.png", "star2.png", "star3.png", "stopwatch.png"];
+let imgs = ["1.png", "2.png", "3.png", "100.png", "cam.png", "cool.png", "douglas.png", "explosion.png", "eyes.png", "fist.png", "hi5.png", "ok.png", "pump.png", "star.png", "star2.png", "star3.png", "stopwatch.png", "standing.png"];
 let emojiImgs = [];
 // CONFETTI: Pass in the id of an element
 let confetti = new Confetti("startBtn");
@@ -279,7 +279,7 @@ async function startExperience() {
   await say("Show me nothing! Go!");
 
   progressP.style.display = "block";
-  reactEmoji.src = "./assets/pump.png";
+  reactEmoji.src = "./assets/standing.png";
 
   for (var i = 0; i < 20; i++) {
     await wait(100);

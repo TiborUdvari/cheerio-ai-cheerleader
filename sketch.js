@@ -153,17 +153,12 @@ async function say(something) {
   if (audioMap[something]) {
     let audio = new Audio('./assets/' + audioMap[something]);
     audio.play();
-    // await audio.play();
     await new Promise(resolve => audio.ended(resolve));
-
   } else {
     speech.speak(something); 
     console.error("No audio file for " + something);
     await new Promise(resolve => speech.ended(resolve));
   }
-
-  //await new Promise(resolve => speech.ended(resolve));
-  //await wait(1000);
 }
 
 async function startExperience() {

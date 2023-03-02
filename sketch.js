@@ -245,7 +245,6 @@ function clearAllLabels() {
   knnClassifier.clearAllLabels();
   updateCounts();
 }
-<<<<<<< HEAD
 
 function wait(milliseconds) {
   return new Promise(resolve => {
@@ -254,5 +253,3 @@ function wait(milliseconds) {
     }, milliseconds);
   });
 }
-=======
->>>>>>> 02b797ceaaefbbff71c592be12d587b33bedf92b

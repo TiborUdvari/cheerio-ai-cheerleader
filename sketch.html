@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
 
     <title>Cheerio, the AI cheerleader</title>
 
@@ -13,27 +16,31 @@
     <script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
     <script src="https://confettijs.org/confetti.min.js"></script>
 
-
     <script
       src="https://unpkg.com/ml5@latest/dist/ml5.min.js"
       type="text/javascript"
     ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="./style.css" />
-   
-    <style>
-      
-    </style>
+
+    <style></style>
   </head>
 
   <body>
     <main>
       <div class="nav flex"><img src="./assets/eyes.png" alt="eyes" class="emoji"></div>
       <div id="videoContainer" class="w-full video-container"></div>
-      <div class="flex" style="justify-content: center;">
+      <div class="flex" style="justify-content: center">
         <button id="startBtn" class="w-full">START</button>
       </div>
       <div class="flex">
@@ -45,14 +52,15 @@
 
       <section style="display: none;">
 
+      <section style="display: none">
         <div
-        class="flex"
-        style="display: flex; justify-content: center; gap: 10px"
-      >
-        <button id="bgBtn">BG</button>
-        <button id="onBtn">ON</button>
-        <button id="offBtn">OFF</button>
-      </div>
+          class="flex"
+          style="display: flex; justify-content: center; gap: 10px"
+        >
+          <button id="bgBtn">BG</button>
+          <button id="onBtn">ON</button>
+          <button id="offBtn">OFF</button>
+        </div>
         <div>
           <p>
             <button class="w-full" id="trainBtn"><i>Train</i></button>
@@ -73,7 +81,6 @@
         </p>
       </section>
       <p id="status">Loading Model...</p>
-
     </main>
     <script src="sketch.js"></script>
   </body>

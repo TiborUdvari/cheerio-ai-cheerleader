@@ -6,7 +6,7 @@
 
   :root {
     --active-brightness: 0.85;
-    --border-radius: 5px;
+    --border-radius: 2rem;
     --box-shadow: 2px 2px 10px;
     --color-accent: #118bee15;
     --color-bg: #b9d8c2;
@@ -28,6 +28,23 @@
     --width-card-medium: 460px;
     --width-card-wide: 800px;
     --width-content: 1080px;
+  }
+  aside{
+    background-color: var(--color-bg-secondary);
+  }
+  
+  h1, h2 {
+    font-family: 'Rampart One', cursive;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  aside>h3 {
+    margin-top: 0;
+    text-align: center;
+  }
+  aside>p{
+    text-align: center;
   }
   body{
     font-family: Arial, Helvetica, sans-serif ;
@@ -61,20 +78,34 @@
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    display: block;
   }
-  button{
+  button {
     background-color:var(--color-link);
     color: var(--color-bg);
-    position: absolute;
-    z-index: 1;
-    bottom: 10%;
-    max-width: 50%;   
-    border-radius: 2rem;
+    
     font-family: 'Rampart One', cursive;
     font-size: 2rem;
     line-height: 2rem;
-}
+    max-width: 50%;   
+  }
+  #startBtn{
+    position: absolute;
+    z-index: 1;
+    bottom: 10%;
 
+    
+}
+blockquote {
+    display: inline-block;
+    width: 50%;
+    font-size: 4rem;
+    line-height: 1;
+    font-family: 'Rampart One', cursive;
+}
+blockquote > footer {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
   /* RESPONSIVE LAYOUT*/
   @media all and (max-width: 959px) and (orientation : portrait) {
@@ -86,7 +117,7 @@
             padding: 0;
         }
         video{
-            height: 110%;
+            height: 120%;
             max-width: none;
 
             /* width: auto; */

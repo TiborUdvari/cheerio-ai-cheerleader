@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
   :root {
@@ -26,6 +27,7 @@
     --width-card-medium: 460px;
     --width-card-wide: 800px;
     --width-content: 1080px;
+
   }
   aside{
     background-color: var(--color-bg-secondary);
@@ -74,7 +76,7 @@
   .flex{
     display: flex;
 
-  }
+  }y
   .nav {
     padding-top: 10%;
 
@@ -116,6 +118,24 @@ blockquote {
 blockquote > footer {
   font-family: Arial, Helvetica, sans-serif;
 }
+.counter-container {
+    text-align: center;
+}
+#counter-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Rampart One', cursive;
+    font-size: 16rem;
+    z-index: 1000;
+    display: block;
+    color: var(--color-secondary);
+    mix-blend-mode: exclusion;
+    padding-bottom: 1rem;
+}
+
+
 
   /* RESPONSIVE LAYOUT*/
   @media all and (max-width: 959px) and (orientation : portrait) {

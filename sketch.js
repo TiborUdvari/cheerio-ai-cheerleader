@@ -7,7 +7,6 @@ let pLabel = "";
 let sound;
 let reactEmoji;
 let speech;
-
 let sounds = [];
 let soundFiles = ["good-job-josh.mp3"];
 
@@ -76,7 +75,8 @@ function setup() {
   let runBtn = document.querySelector("#runBtn");
   let clearBtn = document.querySelector("#clearBtn");
   let startBtn = document.querySelector("#startBtn");
-
+  let countRep = document.getElementById('counter-value');
+  
   startBtn.addEventListener("click", startExperience);
 
   bgBtn.addEventListener("click", () => {

@@ -5,7 +5,7 @@ let confTreshold = 0.98;
 let cLabel = ""; // current label
 let pLabel = "";
 let sound;
-
+let reactEmoji;
 let speech;
 
 let sounds = [];
@@ -36,6 +36,9 @@ function voiceReady() {
 }
 
 function setup() {
+  reactEmoji = document.getElementById('react-emoji');
+
+
   sound = loadSound('assets/good-job-josh.mp3');
   speech = new p5.Speech(voiceReady); //callback, speech synthesis object
 
@@ -138,8 +141,12 @@ async function say(something) {
 }
 
 async function startExperience() {
+  // reactEmoji.classList.add("animate__animated");
+  // reactEmoji.classList.add("animate__bounce");
+
+  reactEmoji.src = "./assets/explosion.png" 
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("Hello, I'm Cheerio, your AI cheerleader!");
-  document.getElementById('react-emoji').src = "./assets/explosion.png"
   await wait(100);
 
   await say("Let's get started!");
@@ -148,14 +155,21 @@ async function startExperience() {
   await say("Show me something in 3 seconds");
   await wait(100);
 
+  reactEmoji.src = "./assets/3.png"
+  await new Promise(resolve => reactEmoji.onload(resolve)); 
   await say("3");
   await wait(100);
 
+  reactEmoji.src = "./assets/2.png" 
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("2");
   await wait(100);
 
+  reactEmoji.src = "./assets/1.png" 
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("1");
   await wait(100);
+
 
   await say("Show me something");
 
@@ -171,12 +185,18 @@ async function startExperience() {
   await say("Great, great! Now don't show me anything");
   await wait(100);
 
+  reactEmoji.src = "./assets/3.png";
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("3");
   await wait(100);
 
+  reactEmoji.src = "./assets/2.png" 
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("2");
   await wait(100);
 
+  reactEmoji.src = "./assets/1.png" 
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("1");
   await wait(100);
 
@@ -191,6 +211,8 @@ async function startExperience() {
     }
   }
 
+  reactEmoji.src = "./assets/100.png" 
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("BOOM");
 
   await say("We are good to go, chief!");
@@ -198,15 +220,23 @@ async function startExperience() {
   await say("We are starting in 3!!!");
   await wait(100);
 
+  reactEmoji.src = "./assets/3.png"
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("3");
   await wait(100);
 
+  reactEmoji.src = "./assets/2.png" 
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("2");
   await wait(100);
 
+  reactEmoji.src = "./assets/1.png" 
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("1");
   await wait(100);
 
+  reactEmoji.src = "./assets/100.png" 
+  await new Promise(resolve => reactEmoji.onload(resolve));
   await say("BOOM");
 
 

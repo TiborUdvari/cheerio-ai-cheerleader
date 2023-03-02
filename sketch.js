@@ -26,6 +26,8 @@ let audioMap = {
   "We're starting in 3!!!": "were-starting-in-3.mp3",
 };
 
+let imgs = ["1.png", "2.png", "3.png", "100.png", "cam.png", "cool.png", "douglas.png", "explosion.png", "eyes.png", "fist.png", "hi5.png", "ok.png", "pump.png", "star.png", "star2.png", "star3.png", "stopwatch.png"];
+let emojiImgs = [];
 // CONFETTI: Pass in the id of an element
 let confetti = new Confetti("startBtn");
 
@@ -43,6 +45,8 @@ function preload() {
       [key]: loadSound("assets/audio/" + audioMap[key]),
     }))
   );
+
+  emojiImgs = imgs.map((img) => loadImage("assets/" + img));
 }
 
 function voiceReady() {

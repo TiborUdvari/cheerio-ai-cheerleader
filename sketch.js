@@ -148,6 +148,13 @@ function gotResults(err, result) {
 }
 
 function rep(){
+  let anims = ["bounce", "flash", "pulse", "rubberBand", "shakeX", "shakeY", "headShake", "swing", "tada", "wobble", "jello", "heartBeat"];
+
+  let rand = Math.floor(Math.random() * anims.length);
+  let randAnim = anims[rand];
+  animateCSS(reactEmoji, randAnim);
+  animateCSS(countEl, randAnim);
+
   counter++;
   countEl.textContent = counter;
   sound.play();

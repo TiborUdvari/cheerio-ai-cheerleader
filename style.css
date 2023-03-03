@@ -119,23 +119,25 @@ blockquote > footer {
   font-family: Arial, Helvetica, sans-serif;
 }
 .counter-container {
-    text-align: center;
+    /* text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding-bottom: 1rem;
 }
 #counter-value {
-    /* position: absolute; */
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translate(-50%,-50%); */
+    
     font-family: 'Rampart One', cursive;
     font-size: 16rem;
+    letter-spacing: -0.5rem;
     z-index: 1000;
     /* display: none; */
     color: var(--color-secondary);
-    mix-blend-mode: exclusion;
-    padding-bottom: 1rem;
+    /* padding-bottom: 1rem; */
 }
 
 

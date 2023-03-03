@@ -32,7 +32,11 @@
   aside{
     background-color: var(--color-bg-secondary);
   }
-  
+/* .spacer{
+    height: 120px;
+} */
+.purple-bg{
+    background-color: var(--color-secondary);}
   h1, h2 {
     font-family: 'Rampart One', cursive;
   }
@@ -180,7 +184,7 @@ blockquote > footer {
         }
         #quote > blockquote {
             width: 100%;
-            
+
         }
 
     }

@@ -138,7 +138,7 @@ function addExample(label) {
 function classify() {
   const numLabels = knnClassifier.getNumLabels();
   if (numLabels <= 0) {
-    console.error("There is no examples in any label");
+    console.log("There is no examples in any label");
     return;
   }
   const features = featureExtractor.infer(video);

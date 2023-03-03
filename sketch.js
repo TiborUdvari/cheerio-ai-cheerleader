@@ -206,9 +206,11 @@ function startBtnPushed() {
 }
 
 function done() {
-  // Do celebration stuff
   stopClassify = true;
   
+  // todo - add star confettis
+  // todo - add big star in the middle
+
   // reset other vars
   say("Amazing job, you're the best!");
   startBtn.textContent = "AGAIN";
@@ -219,8 +221,6 @@ function done() {
 async function startExperience() {
   startBtn.textContent = "DONE";
   startBtn.style.visibility = "hidden";
-  // reactEmoji.classList.add("animate__animated");
-  // reactEmoji.classList.add("animate__bounce");
 
   reactEmoji.src = await new Promise((resolve) =>
     resolve("./assets/explosion.png")

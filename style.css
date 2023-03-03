@@ -143,7 +143,9 @@ blockquote > footer {
     color: var(--color-secondary);
     /* padding-bottom: 1rem; */
 }
-
+#try{
+    margin-top: 3rem;
+}
 
 
   /* RESPONSIVE LAYOUT*/

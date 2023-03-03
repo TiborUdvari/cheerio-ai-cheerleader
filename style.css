@@ -28,6 +28,7 @@
     --width-card-wide: 800px;
     --width-content: 1080px;
 
+
   }
   aside{
     background-color: var(--color-bg-secondary);
@@ -35,8 +36,23 @@
 /* .spacer{
     height: 120px;
 } */
+a{
+    text-decoration: none;
+}
+footer{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+footer > p {
+    text-align: center;
+}
 .purple-bg{
-    background-color: var(--color-secondary);}
+    background-color: var(--color-secondary);
+    max-width: 100%;
+}
   h1, h2 {
     font-family: 'Rampart One', cursive;
   }
@@ -143,9 +159,8 @@ blockquote > footer {
     color: var(--color-secondary);
     /* padding-bottom: 1rem; */
 }
-#try{
-    margin-top: 3rem;
-}
+
+
 
 
   /* RESPONSIVE LAYOUT*/

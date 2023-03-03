@@ -12,6 +12,7 @@ let pLabel = "";
 let sound;
 let reactEmoji;
 let speech;
+let emojiContainer;
 
 let startBtn;
 let progressP;
@@ -50,7 +51,12 @@ let audioMap = {
   "Fantastic": "fantastic.mp3",
   "Incredible": "incredible.mp3",
   "You're the best": "youre-the-best.mp3",
-  "cheering": "cheering.mp3"
+  "cheering": "cheering.mp3",
+
+  "Great, great! Now rest for a few seconds.": "great-great-now-rest-for-a-few-seconds.mp3",
+  "Hold a rep, starting in 3!": "hold-a-rep-starting-in-3.mp3",
+  "Hold a rep" : "hold-a-rep.mp3",
+  "Now rest for a sec!": "now-rest-for-a-sec.mp3"
 };
 
 let imgs = ["1.png", "2.png", "3.png", "100.png", "cam.png", "cool.png", "douglas.png", "explosion.png", "eyes.png", "fist.png", "hi5.png", "ok.png", "pump.png", "star.png", "star2.png", "star3.png", "stopwatch.png", "standing.png"];
@@ -77,6 +83,7 @@ function voiceReady() {
 }
 
 function setup() {
+  
   document.querySelector("main").style.display = "inherit";
 
   reactEmoji = document.getElementById("react-emoji");
@@ -94,6 +101,7 @@ function setup() {
   let offBtn = document.querySelector("#offBtn");
   let runBtn = document.querySelector("#runBtn");
   let clearBtn = document.querySelector("#clearBtn");
+  emojiContainer = document.querySelector("#emojiContainer");
   startBtn = document.querySelector("#startBtn");
   countEl = document.getElementById('counter-value');
   progressP = document.querySelector("#progress");
@@ -212,7 +220,7 @@ function setProgress(progress) {
 
   let str = "";
   for (let i = 0; i < max; i++) {
-    let extra = i / max < progress ? on : off;
+    let extra = (i + 1) / max < progress ? on : off;
     str += extra;
   }
 
@@ -296,9 +304,9 @@ async function startExperience() {
   startBtn.textContent = "DONE";
   startBtn.style.visibility = "hidden";
 
-  reactEmoji.src = await new Promise((resolve) =>
-    resolve("./assets/explosion.png")
-  );
+  // reactEmoji.src = await new Promise((resolve) =>
+  //   resolve("./assets/explosion.png")
+  // );
   animateCSS(reactEmoji, "bounce");
 
   await say("Hello, I'm Cheerio, your AI cheerleader!");
@@ -307,7 +315,7 @@ async function startExperience() {
   await say("Let's get started!");
   await wait(100);
 
-  await say("Show me something in 3 seconds");
+  await say("Hold a rep, starting in 3!");
   await wait(100);
 
   reactEmoji.src = await new Promise((resolve) => resolve("./assets/3.png"));
@@ -325,10 +333,11 @@ async function startExperience() {
   await say("1");
   await wait(100);
 
-  await say("Show me something");
+  await say("Hold a rep");
 
   progressP.style.display = "block";
   reactEmoji.src = "./assets/pump.png";
+  setProgress(1 / 20);
 
   for (var i = 0; i < 20; i++) {
     await wait(100);
@@ -343,7 +352,7 @@ async function startExperience() {
   reactEmoji.src = "";
 
 
-  await say("Great, great! Now don't show me anything");
+  await say("Great, great! Now rest for a few seconds.");
   await wait(100);
 
   reactEmoji.src = await new Promise((resolve) => resolve("./assets/3.png"));
@@ -360,10 +369,11 @@ async function startExperience() {
   await say("1");
   await wait(100);
 
-  await say("Show me nothing! Go!");
+  await say("Now rest for a sec!");
 
   progressP.style.display = "block";
   reactEmoji.src = "./assets/standing.png";
+  setProgress(1 / 20);
 
   for (var i = 0; i < 20; i++) {
     await wait(100);

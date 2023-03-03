@@ -287,7 +287,8 @@ function done() {
   say("cheering");
   confetti();
   startBtn.textContent = "AGAIN";
-
+  startBtn.style.backgroundColor = "var(--color-secondary)";
+  startBtn.style.color = "var(--color-bg)";
   setTimeout(shoot, 0);
   setTimeout(shoot, 200);
   setTimeout(shoot, 400);
@@ -324,6 +325,8 @@ function shoot() {
 
 async function startExperience() {
   startBtn.textContent = "DONE";
+  startBtn.style.backgroundColor = "var(--color-bg)";
+  startBtn.style.color = "var(--color-text)";
   startBtn.style.visibility = "hidden";
 
   // reactEmoji.src = await new Promise((resolve) =>

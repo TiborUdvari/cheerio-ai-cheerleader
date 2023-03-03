@@ -200,3 +200,11 @@ blockquote > footer {
   /* background-color: var(--color-bg); */
   /* border-radius: var(--border-radius); */
 }
+
+.emoji-middle {
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin-top: -3rem;
+  display: flex;
+}

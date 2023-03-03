@@ -440,7 +440,7 @@ async function startExperience() {
 
   classify();
 
-  await wait(5 * 1000); // 5 secs, change here for video
+  await wait(60 * 1000); // 5 secs, change here for video
   startBtn.style.visibility = "visible";
 
 

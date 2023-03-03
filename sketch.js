@@ -30,6 +30,21 @@ let audioMap = {
   "Keep going!": "keep-going.mp3",
   "BOOM": "boom.mp3",
   "We're starting in 3!!!": "were-starting-in-3.mp3",
+  "Keep it up": "keep-it-up.mp3",
+  "You're doing great": "youre-doing-great.mp3",
+  "You've got this": "youve-got-this.mp3",
+  "Focus":  "focus.mp3",
+  "One more" : "one-more.mp3",
+  "Go, go, go": "go-go-go.mp3",
+  "Stay strong": "stay-strong.mp3",
+  "You can do it": "you-can-do-it.mp3",
+  "Amazing": "amazing.mp3",
+  "Great job": "great-job.mp3",
+  "Wow": "wow.mp3",
+  "Awesome": "awesome.mp3",
+  "Fantastic": "fantastic.mp3",
+  "Incredible": "incredible.mp3",
+  "You're the best": "youre-the-best.mp3"
 };
 
 let imgs = ["1.png", "2.png", "3.png", "100.png", "cam.png", "cool.png", "douglas.png", "explosion.png", "eyes.png", "fist.png", "hi5.png", "ok.png", "pump.png", "star.png", "star2.png", "star3.png", "stopwatch.png", "standing.png"];
@@ -158,6 +173,25 @@ function rep(){
   counter++;
   countEl.textContent = counter;
   sound.play();
+  let encouragements = [
+    "Keep it up",
+    "You're doing great",
+    "You've got this",
+    "Focus",
+    "One more",
+    "Go, go, go",
+    "Stay strong",
+    "You can do it",
+    "Amazing",
+    "Great job",
+    "Wow",
+    "Awesome",
+    "Fantastic",
+    "Incredible",
+    "You're the best"
+  ];
+
+  
   // do fun stuff
   confetti();
   // fun anims

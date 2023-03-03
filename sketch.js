@@ -101,7 +101,7 @@ function setup() {
   let offBtn = document.querySelector("#offBtn");
   let runBtn = document.querySelector("#runBtn");
   let clearBtn = document.querySelector("#clearBtn");
-  emojiContainer = document.querySelector("#emojiContainer");
+  emojiContainer = document.querySelector("#emoji-container");
   startBtn = document.querySelector("#startBtn");
   countEl = document.getElementById('counter-value');
   progressP = document.querySelector("#progress");
@@ -205,12 +205,33 @@ function rep(){
     "You're the best"
   ];
 
+  let successEmojis = [
+    "clap.png",
+    "douglas.png",
+    "clap.png",
+    "star2.png"
+  ];
+
   // say random encouragement
   say(encouragements[Math.floor(Math.random() * encouragements.length)]);
 
   // do fun stuff
   confetti();
   // fun anims
+
+  // show counter if not divisible by 5
+  if (counter % 5 == 0) {
+    // hide counter, show emoji fun emoji
+    // remove class from emojiContainer
+    emojiContainer.classList.add("emoji-middle");
+    reactEmoji.src = "assets/" + successEmojis[Math.floor(Math.random() * successEmojis.length)];
+    // show random emoji
+  } else {
+    // show counter
+    emojiContainer.classList.remove("emoji-middle");
+
+  }
+
 }
 
 function setProgress(progress) {
@@ -388,9 +409,11 @@ async function startExperience() {
   progressP.style.display = "none";
   reactEmoji.src = "";
 
-  reactEmoji.src = await new Promise((resolve) => resolve("./assets/100.png"));
-
+  reactEmoji.src = await new Promise((resolve) => resolve("./assets/explosion.png"));
+  animateCSS(reactEmoji, "heartBeat");
   await say("BOOM");
+
+  // add heartbeat animation
 
   await say("We are good to go, buddy!");
 
@@ -411,8 +434,9 @@ async function startExperience() {
   await say("1");
   await wait(100);
 
-  reactEmoji.src = await new Promise((resolve) => resolve("./assets/100.png"));
+  reactEmoji.src = await new Promise((resolve) => resolve("./assets/explosion.png"));
   await say("BOOM");
+  animateCSS(reactEmoji, "heartBeat");
 
   classify();
 

@@ -243,9 +243,6 @@ function startBtnPushed() {
 function done() {
   stopClassify = true;
   
-  // todo - add star confettis
-  // todo - add big star in the middle
-
   reactEmoji.src = "./assets/star3.png";
 
   // reset other vars

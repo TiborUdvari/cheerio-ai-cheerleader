@@ -56,7 +56,8 @@ let audioMap = {
   "Great, great! Now rest for a few seconds.": "great-great-now-rest-for-a-few-seconds.mp3",
   "Hold a rep, starting in 3!": "hold-a-rep-starting-in-3.mp3",
   "Hold a rep" : "hold-a-rep.mp3",
-  "Now rest for a sec!": "now-rest-for-a-sec.mp3"
+  "Now rest for a sec!": "now-rest-for-a-sec.mp3",
+  "We're good to go!": "were-good-to-go.mp3",
 };
 
 let imgs = ["1.png", "2.png", "3.png", "100.png", "cam.png", "cool.png", "douglas.png", "explosion.png", "eyes.png", "fist.png", "hi5.png", "ok.png", "pump.png", "star.png", "star2.png", "star3.png", "stopwatch.png", "standing.png"];
@@ -415,7 +416,7 @@ async function startExperience() {
 
   // add heartbeat animation
 
-  await say("We are good to go, buddy!");
+  await say("We're good to go!");
 
   await say("We're starting in 3!!!");
   await wait(100);

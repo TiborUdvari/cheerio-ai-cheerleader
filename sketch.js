@@ -1,3 +1,8 @@
+// hold a rep
+// rest 5 seconds
+// send image to middle
+// show / hide counter
+
 let video;
 const knnClassifier = ml5.KNNClassifier();
 let featureExtractor;
@@ -173,7 +178,7 @@ function rep(){
 
   counter++;
   countEl.textContent = counter;
-  sound.play();
+  // sound.play();
   let encouragements = [
     "Keep it up",
     "You're doing great",
@@ -192,7 +197,9 @@ function rep(){
     "You're the best"
   ];
 
-  
+  // say random encouragement
+  say(encouragements[Math.floor(Math.random() * encouragements.length)]);
+
   // do fun stuff
   confetti();
   // fun anims

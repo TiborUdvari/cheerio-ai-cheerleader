@@ -1,3 +1,8 @@
+// hold a rep
+// rest 5 seconds
+// send image to middle
+// show / hide counter
+
 let video;
 const knnClassifier = ml5.KNNClassifier();
 let featureExtractor;
@@ -44,7 +49,8 @@ let audioMap = {
   "Awesome": "awesome.mp3",
   "Fantastic": "fantastic.mp3",
   "Incredible": "incredible.mp3",
-  "You're the best": "youre-the-best.mp3"
+  "You're the best": "youre-the-best.mp3",
+  "cheering": "cheering.mp3"
 };
 
 let imgs = ["1.png", "2.png", "3.png", "100.png", "cam.png", "cool.png", "douglas.png", "explosion.png", "eyes.png", "fist.png", "hi5.png", "ok.png", "pump.png", "star.png", "star2.png", "star3.png", "stopwatch.png", "standing.png"];
@@ -172,7 +178,7 @@ function rep(){
 
   counter++;
   countEl.textContent = counter;
-  sound.play();
+  // sound.play();
   let encouragements = [
     "Keep it up",
     "You're doing great",
@@ -191,7 +197,9 @@ function rep(){
     "You're the best"
   ];
 
-  
+  // say random encouragement
+  say(encouragements[Math.floor(Math.random() * encouragements.length)]);
+
   // do fun stuff
   confetti();
   // fun anims
@@ -242,15 +250,47 @@ function startBtnPushed() {
 function done() {
   stopClassify = true;
   
-  // todo - add star confettis
-  // todo - add big star in the middle
+  reactEmoji.src = "./assets/star3.png";
 
   // reset other vars
   say("Amazing job, you're the best!");
+  say("cheering");
+  confetti();
   startBtn.textContent = "AGAIN";
+
+  setTimeout(shoot, 0);
+  setTimeout(shoot, 200);
+  setTimeout(shoot, 400);
 
   knnClassifier.clearAllLabels();
 }
+
+var defaults = {
+  spread: 360,
+  ticks: 50,
+  gravity: 0,
+  decay: 0.94,
+  startVelocity: 30,
+  shapes: ['star'],
+  colors: ['FFE400', 'FFBD00', 'E89400', 'FFCA6C', 'FDFFB8']
+};
+
+function shoot() {
+  confetti({
+    ...defaults,
+    particleCount: 40,
+    scalar: 1.2,
+    shapes: ['star']
+  });
+
+  confetti({
+    ...defaults,
+    particleCount: 10,
+    scalar: 0.75,
+    shapes: ['circle']
+  });
+}
+
 
 async function startExperience() {
   startBtn.textContent = "DONE";

@@ -1,9 +1,11 @@
-# [Cheerio AI 👀](https://cheerioai.fun) [![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)
+# [Cheerio AI 👀](https://cheerioai.fun) 
 ## Your own personal cheerleader! 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
 
 ![Dumbbel loop](./assets/2303051447-dumbbel-andrea-loop.gif)
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://cheerioai.fun) [![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://cheerioai.fun)
+[![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://cheerioai.fun)
+[![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://cheerioai.fun)
 
 With its cute and cheerful personality, Cheerio AI is your own personal cheerleader cheering you on every step of your fitness journey. Whether you’re sweating it out on the treadmill or pumping iron at the gym, Cheerio AI is there to keep you motivated and on track.
 

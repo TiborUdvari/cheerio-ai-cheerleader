@@ -1,5 +1,7 @@
-# Cheerio AI
-## Your own personal cheerleader!
+# [Cheerio AI 👀](https://cheerioai.fun)
+## Your own personal cheerleader! 
+
+![Dumbbel loop](./assets/2303051447-dumbbel-andrea-loop.webm)
 
 With its cute and cheerful personality, Cheerio AI is your own personal cheerleader cheering you on every step of your fitness journey. Whether you’re sweating it out on the treadmill or pumping iron at the gym, Cheerio AI is there to keep you motivated and on track.
 

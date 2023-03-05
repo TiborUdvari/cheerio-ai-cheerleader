@@ -1,5 +1,4 @@
-# [Cheerio AI 👀](https://cheerioai.fun)
-## Your own personal cheerleader! 
+# [Cheerio AI 👀](https://cheerioai.fun), your personal cheerleader! 
 
 ![Built with love and AI](https://img.shields.io/badge/-Built%20with%20%E2%9D%A4%EF%B8%8F_and_AI-930DE9)
 ![Makes people smile](https://img.shields.io/badge/-Makes%20people%20smile%20%F0%9F%AB%A0-930DE9)

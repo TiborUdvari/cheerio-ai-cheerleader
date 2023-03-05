@@ -1,8 +1,8 @@
 # [Cheerio AI 👀](https://cheerioai.fun), your personal cheerleader! 
 
-[![Built with love and AI](https://img.shields.io/badge/-Built%20with%20%E2%9D%A4%EF%B8%8F_and_AI-930DE9)](https://cheerioai.com)
-[![Makes people smile](https://img.shields.io/badge/-Makes%20people%20smile%20%F0%9F%AB%A0-930DE9)](https://cheerioai.com)
-[![Try it out](https://img.shields.io/badge/-Try%20it%20out%20%F0%9F%8E%89-930DE9)](https://cheerioai.com)
+[![Built with love and AI](https://img.shields.io/badge/-Built%20with%20%E2%9D%A4%EF%B8%8F_and_AI-930DE9)](https://cheerioai.fun)
+[![Makes people smile](https://img.shields.io/badge/-Makes%20people%20smile%20%F0%9F%AB%A0-930DE9)](https://cheerioai.fun)
+[![Try it out](https://img.shields.io/badge/-Try%20it%20out%20%F0%9F%8E%89-930DE9)](https://cheerioai.fun)
 
 ![Dumbbel loop](./assets/2303051447-dumbbel-andrea-loop.gif)
 
